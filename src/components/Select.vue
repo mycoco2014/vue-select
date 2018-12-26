@@ -885,7 +885,10 @@
        * @return {void}
        */
       toggleDropdown(e) {
-        console.log('toggleDropdown--->---1')
+        console.log('toggleDropdown--->---0.0',this.search)
+        console.log('toggleDropdown--->---0.1',this.placeholder)
+
+        console.log('toggleDropdown--->---1',e)
         if (e.target === this.$refs.openIndicator || e.target === this.$refs.search || e.target === this.$refs.toggle ||
             e.target.classList.contains('selected-tag') || e.target === this.$el) {
           if (this.open) {
@@ -895,7 +898,10 @@
             if (!this.disabled) {
               this.open = true
               console.log('toggleDropdown--->---3')
-              this.search = 'xxx';
+              // this.search = 'xxx';
+              if (this.isValueEmpty && this.placeholder) {
+                this.search = this.placeholder;
+              }
               this.$refs.search.focus()
             } else {
               console.log('toggleDropdown--->---4')
