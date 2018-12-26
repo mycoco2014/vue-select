@@ -23,10 +23,10 @@ new Vue({
   methods: {
     search1(search, loading) {
       console.log('xxx:',search);
-      if (typeof loading === 'function') {
+      // if (typeof loading === 'function') {
         loading(true);
         loading(false)
-      }
+      // }
     },
     search(search, loading) {
       loading(true);

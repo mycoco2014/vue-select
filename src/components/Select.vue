@@ -1016,7 +1016,7 @@
         if (!this.$refs.search.value.length && this.mutableValue) {
           this.multiple ? this.mutableValue.pop() : this.mutableValue = null;
           // 删除完毕后,触发search事件
-          this.$emit('search');
+          this.$emit('search',null,function toggleLoading() {});
         }
       },
 
