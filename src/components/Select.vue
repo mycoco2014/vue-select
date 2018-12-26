@@ -1093,8 +1093,9 @@
        * @return {Boolean} True if non empty value
        */
       searching() {
-        console.log('debug-searching..',this.search);
-        return !!this.search
+        return true;
+        //console.log('debug-searching..',this.search);
+        //return !!this.search
       },
 
       /**
