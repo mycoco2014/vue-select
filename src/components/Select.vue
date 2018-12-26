@@ -895,7 +895,7 @@
             if (!this.disabled) {
               this.open = true
               console.log('toggleDropdown--->---3')
-              this.search = this.searchPlaceholder()
+              this.search = 'xxx';
               this.$refs.search.focus()
             } else {
               console.log('toggleDropdown--->---4')
