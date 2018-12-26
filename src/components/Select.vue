@@ -885,15 +885,20 @@
        * @return {void}
        */
       toggleDropdown(e) {
+        console.log('toggleDropdown--->---1')
         if (e.target === this.$refs.openIndicator || e.target === this.$refs.search || e.target === this.$refs.toggle ||
             e.target.classList.contains('selected-tag') || e.target === this.$el) {
           if (this.open) {
+            console.log('toggleDropdown--->---2')
             this.$refs.search.blur() // dropdown will close on blur
           } else {
             if (!this.disabled) {
               this.open = true
+              console.log('toggleDropdown--->---3')
               this.search = this.searchPlaceholder()
               this.$refs.search.focus()
+            } else {
+              console.log('toggleDropdown--->---4')
             }
           }
         }
