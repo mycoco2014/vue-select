@@ -313,7 +313,7 @@
       <div class="vs__selected-options" ref="selectedOptions">
         <slot v-for="option in valueAsArray" name="selected-option-container"
               :option="(typeof option === 'object')?option:{[label]: option}" :deselect="deselect" :multiple="multiple" :disabled="disabled">
-          <span class="selected-tag" v-bind:key="option.index" v-if="!this.searching">
+          <span class="selected-tag" v-bind:key="option.index">
             <slot name="selected-option" v-bind="(typeof option === 'object')?option:{[label]: option}">
               {{ getOptionLabel(option) }}
             </slot>
@@ -982,16 +982,13 @@
        * @return {void}
        */
       onSearchBlur() {
-        console.log('xx-v0: ',!this.searching);
         if (this.mousedown && !this.searching) {
-          console.log('xx-v1: ');
           this.mousedown = false
         } else {
-          console.log('xx-v2: ');
           if (this.clearSearchOnBlur) {
             this.search = ''
           }
-          this.open = false
+          this.open = false;
           this.$emit('search:blur')
         }
       },
