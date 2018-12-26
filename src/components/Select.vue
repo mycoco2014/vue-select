@@ -892,6 +892,7 @@
           } else {
             if (!this.disabled) {
               this.open = true
+              this.search = this.searchPlaceholder()
               this.$refs.search.focus()
             }
           }
