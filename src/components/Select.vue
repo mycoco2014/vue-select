@@ -1015,9 +1015,12 @@
 
         // 如果在已选中的值中,按Delete值,选清理input中的值,当input值为空的时候,在清空选中的值
 
+        console.log('search value:',this.$refs.search.value);
+        console.log('this.mutableValue:',this.mutableValue);
         if (!this.$refs.search.value.length && this.mutableValue) {
           return this.multiple ? this.mutableValue.pop() : this.mutableValue = null
         }
+
       },
 
       /**
