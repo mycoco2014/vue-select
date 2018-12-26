@@ -756,7 +756,6 @@
        * @return {void}
        */
       mutableValue(val, old) {
-        console.log(`debug-mutableValue:${val}, ${old}`);
         if (this.multiple) {
           this.onChange ? this.onChange(val) : null
         } else {
@@ -1094,6 +1093,7 @@
        * @return {Boolean} True if non empty value
        */
       searching() {
+        console.log('debug-searching..',this.search);
         return !!this.search
       },
 
