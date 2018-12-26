@@ -22,7 +22,7 @@ new Vue({
   },
   methods: {
     search1(search, loading) {
-      console.log('xxx:',search);
+      console.log('search1:',search);
       // if (typeof loading === 'function') {
         loading(true);
         loading(false)

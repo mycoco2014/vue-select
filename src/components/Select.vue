@@ -1016,6 +1016,12 @@
         if (!this.$refs.search.value.length && this.mutableValue) {
           this.multiple ? this.mutableValue.pop() : this.mutableValue = null;
           // 删除完毕后,触发search事件
+          // console.log('maybeDeleteValue 111');
+          this.$emit('search',null,function toggleLoading() {});
+          return;
+        }
+        if(!this.$refs.search.value.length) {
+          // console.log('maybeDeleteValue 222');
           this.$emit('search',null,function toggleLoading() {});
         }
       },
