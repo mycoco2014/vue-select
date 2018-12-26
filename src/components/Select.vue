@@ -1015,13 +1015,11 @@
         // 如果在已选中的值中,按Delete值,选清理input中的值,当input值为空的时候,在清空选中的值
         if (!this.$refs.search.value.length && this.mutableValue) {
           this.multiple ? this.mutableValue.pop() : this.mutableValue = null;
-          // 删除完毕后,触发search事件
-          // console.log('maybeDeleteValue 111');
-          this.$emit('search',null,function toggleLoading() {});
-          return;
         }
-        if(!this.$refs.search.value.length) {
-          // console.log('maybeDeleteValue 222');
+        // console.log('debug len:',this.$refs.search.value.length,this.$refs.search.value);
+        if(this.multiple && (!this.mutableValue || this.mutableValue.length === 0)) {
+          this.$emit('search',null,function toggleLoading() {});
+        } else if (!this.multiple && !this.mutableValue) {
           this.$emit('search',null,function toggleLoading() {});
         }
       },
