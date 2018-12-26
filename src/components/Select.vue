@@ -756,6 +756,7 @@
        * @return {void}
        */
       mutableValue(val, old) {
+        console.log(`debug-mutableValue:${val}, ${old}`);
         if (this.multiple) {
           this.onChange ? this.onChange(val) : null
         } else {
@@ -896,7 +897,7 @@
             this.$refs.search.blur() // dropdown will close on blur
           } else {
             if (!this.disabled) {
-              this.open = true
+              this.open = true;
               if (this.multiple && this.mutableValue) {
               } else if (this.mutableValue) {
                 if (typeof this.mutableValue === 'object') {
