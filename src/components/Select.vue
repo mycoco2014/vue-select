@@ -897,15 +897,14 @@
           } else {
             if (!this.disabled) {
               this.open = true
-
               if (this.multiple && this.mutableValue) {
               } else if (this.mutableValue) {
-                console.log('debug---toggleDropdown--', this.mutableValue);
+                if (typeof this.mutableValue === 'object') {
+                  this.search = this.mutableValue[this.label];
+                } else {
+                  this.search = this.mutableValue;
+                }
               }
-              // this.search = 'xxx';
-//              if (this.placeholder) {
-//                this.search = this.placeholder;
-//              }
               this.$refs.search.focus()
             }
           }
