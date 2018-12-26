@@ -982,9 +982,12 @@
        * @return {void}
        */
       onSearchBlur() {
+        console.log('xx-v0: ',!this.searching);
         if (this.mousedown && !this.searching) {
+          console.log('xx-v1: ');
           this.mousedown = false
         } else {
+          console.log('xx-v2: ');
           if (this.clearSearchOnBlur) {
             this.search = ''
           }
@@ -1094,9 +1097,7 @@
        */
       searching() {
         console.log('debug-searching..',this.search);
-        // false
-        return false;
-//        return !!this.search
+        return !!this.search
       },
 
       /**
