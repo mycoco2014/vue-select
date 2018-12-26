@@ -899,7 +899,7 @@
               this.open = true
               console.log('toggleDropdown--->---3')
               // this.search = 'xxx';
-              if (this.isValueEmpty && this.placeholder) {
+              if (this.placeholder) {
                 this.search = this.placeholder;
               }
               this.$refs.search.focus()
