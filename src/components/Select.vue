@@ -600,6 +600,11 @@
         default: null
       },
 
+      forceValue: {
+        type: String,
+        default: null
+      },
+
       /**
        * When true, newly created tags will be added to
        * the options list.
@@ -887,6 +892,7 @@
       toggleDropdown(e) {
         console.log('toggleDropdown--->---0.0',this.search)
         console.log('toggleDropdown--->---0.1',this.placeholder)
+        console.log('toggleDropdown--->---0.2',this.$refs.search)
 
         console.log('toggleDropdown--->---1',e)
         if (e.target === this.$refs.openIndicator || e.target === this.$refs.search || e.target === this.$refs.toggle ||
@@ -899,9 +905,9 @@
               this.open = true
               console.log('toggleDropdown--->---3')
               // this.search = 'xxx';
-              if (this.placeholder) {
-                this.search = this.placeholder;
-              }
+//              if (this.placeholder) {
+//                this.search = this.placeholder;
+//              }
               this.$refs.search.focus()
             } else {
               console.log('toggleDropdown--->---4')
