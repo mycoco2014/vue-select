@@ -21,6 +21,13 @@ new Vue({
     fuseSearchOptions
   },
   methods: {
+    search1(search, loading) {
+      console.log('xxx:',search);
+      if (typeof loading === 'function') {
+        loading(true);
+        loading(false)
+      }
+    },
     search(search, loading) {
       loading(true);
       this.getRepositories(search, loading, this)

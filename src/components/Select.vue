@@ -917,14 +917,14 @@
        * @return {Boolean}        True when selected | False otherwise
        */
       isOptionSelected(option) {
-          let selected = false
+          let selected = false;
           this.valueAsArray.forEach(value => {
             if (typeof value === 'object') {
               selected = this.optionObjectComparator(value, option)
             } else if (value === option || value === option[this.index]) {
               selected = true
             }
-          })
+          });
           return selected
       },
 
@@ -970,9 +970,9 @@
        */
       onEscape() {
         if (!this.search.length) {
-          this.$refs.search.blur()
+          this.$refs.search.blur();
         } else {
-          this.search = ''
+          this.search = '';
         }
       },
 
@@ -986,7 +986,7 @@
           this.mousedown = false
         } else {
           if (this.clearSearchOnBlur) {
-            this.search = ''
+            this.search = '';
           }
           this.open = false;
           this.$emit('search:blur')
@@ -1012,15 +1012,12 @@
         // 输入框无值,但是mutableValue选中值还有,
         // 1: 先清理 mutableValue.pop
         // 2: 再设置 = null
-
         // 如果在已选中的值中,按Delete值,选清理input中的值,当input值为空的时候,在清空选中的值
-
-        console.log('search value:',this.$refs.search.value);
-        console.log('this.mutableValue:',this.mutableValue);
         if (!this.$refs.search.value.length && this.mutableValue) {
-          return this.multiple ? this.mutableValue.pop() : this.mutableValue = null
+          this.multiple ? this.mutableValue.pop() : this.mutableValue = null;
+          // 删除完毕后,触发search事件
+          this.$emit('search');
         }
-
       },
 
       /**
