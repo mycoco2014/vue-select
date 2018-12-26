@@ -1009,6 +1009,12 @@
        * @return {this.value}
        */
       maybeDeleteValue() {
+        // 输入框无值,但是mutableValue选中值还有,
+        // 1: 先清理 mutableValue.pop
+        // 2: 再设置 = null
+
+        // 如果在已选中的值中,按Delete值,选清理input中的值,当input值为空的时候,在清空选中的值
+
         if (!this.$refs.search.value.length && this.mutableValue) {
           return this.multiple ? this.mutableValue.pop() : this.mutableValue = null
         }
