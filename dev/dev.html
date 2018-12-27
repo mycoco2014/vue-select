@@ -31,10 +31,14 @@
 <body>
     <div id="app">
 
-        <v-select multiple v-model="selected1" label="name" :options="options1"></v-select>
+        <v-select multiple v-model="selected1" label="name" index="id" :options="options1">
+            <template slot="option" slot-scope="option">
+                {{ option.name }}  {{ option.language }}
+            </template>
+        </v-select>
         {{ selected1 }}
 
-        <v-select label="full_name" @search="search1" :options="options"></v-select>
+        <v-select v-model="selectedx" @search="search1" :options="options"></v-select>
         <v-select placeholder="" @search="search1" :options="options"></v-select>
         <v-select placeholder="default, RTL" :options="options" dir="rtl"></v-select>
         <v-select placeholder="default, options=[1,5,10]" :options="[1,5,10]"></v-select>

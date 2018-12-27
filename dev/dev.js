@@ -19,13 +19,14 @@ new Vue({
     ajaxRes: [],
     people: [],
     fuseSearchOptions,
-    selected1: [],
+    selected1: ['444'],
     options1: [
-      { index: 1, name: 'Vue.js', language: 'JavaScript' },
-      { index: 2, name: 'Rails', language: 'Ruby' },
-      { index: 3, name: 'Sinatra', language: 'Ruby' },
-      { index: 4, name: 'Laravel', language: 'PHP', $isDisabled: true }
+      { id: '111', name: 'Vue.js 00000000', language: '1JavaScript' },
+      { id: '222', name: 'Vue.js', language: '2Ruby' },
+      { id: '333', name: 'Vue.js     ', language: '3Ruby' },
+      { id: '444', name: 'Vue.js', language: '4PHP', $isDisabled: true }
     ],
+    selectedx: 'Åland Islands'
   },
   methods: {
     search1(search, loading) {
