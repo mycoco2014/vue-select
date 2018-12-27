@@ -18,7 +18,14 @@ new Vue({
     options: countries,
     ajaxRes: [],
     people: [],
-    fuseSearchOptions
+    fuseSearchOptions,
+    selected1: [],
+    options1: [
+      { index: 1, name: 'Vue.js', language: 'JavaScript' },
+      { index: 2, name: 'Rails', language: 'Ruby' },
+      { index: 3, name: 'Sinatra', language: 'Ruby' },
+      { index: 4, name: 'Laravel', language: 'PHP', $isDisabled: true }
+    ],
   },
   methods: {
     search1(search, loading) {

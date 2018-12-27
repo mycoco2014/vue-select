@@ -14,10 +14,10 @@
             height: 95vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            /*align-items: center;*/
             justify-content: flex-start;
-            flex-wrap: wrap;
-            align-content: center;
+            /*flex-wrap: wrap;*/
+            /*align-content: center;*/
             font-family: -apple-system, sans-serif;
         }
 
@@ -30,6 +30,10 @@
 
 <body>
     <div id="app">
+
+        <v-select multiple v-model="selected1" label="name" :options="options1"></v-select>
+        {{ selected1 }}
+
         <v-select label="full_name" @search="search1" :options="options"></v-select>
         <v-select placeholder="" @search="search1" :options="options"></v-select>
         <v-select placeholder="default, RTL" :options="options" dir="rtl"></v-select>
@@ -57,7 +61,8 @@
                 {{option.label}}
             </template>
         </v-select>
-        <v-select multiple placeholder="custom label template" :options="options">
+
+        <v-select multiple placeholder="xx custom label template" :options="options">
             <span
                     slot="selected-option-container"
                     slot-scope="props"

@@ -815,6 +815,7 @@
        * @return {void}
        */
       select(option) {
+        console.log('select---debug...');
         if (!this.isOptionSelected(option)) {
           if (this.taggable && !this.optionExists(option)) {
             option = this.createOption(option)
@@ -918,13 +919,26 @@
        */
       isOptionSelected(option) {
           let selected = false;
-          this.valueAsArray.forEach(value => {
+          for (let i = 0; i < this.valueAsArray.length; i++) {
+            let value = this.valueAsArray[i];
             if (typeof value === 'object') {
               selected = this.optionObjectComparator(value, option)
             } else if (value === option || value === option[this.index]) {
-              selected = true
+              selected = true;
             }
-          });
+            // check current is selected then break
+            if (selected) {
+              break
+            }
+          }
+//          this.valueAsArray.forEach(value => {
+//            if (typeof value === 'object') {
+//              selected = this.optionObjectComparator(value, option)
+//              return
+//            } else if (value === option || value === option[this.index]) {
+//              selected = true;
+//            }
+//          });
           return selected
       },
 
