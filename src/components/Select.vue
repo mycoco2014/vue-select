@@ -815,7 +815,6 @@
        * @return {void}
        */
       select(option) {
-        console.log('select---debug...');
         if (!this.isOptionSelected(option)) {
           if (this.taggable && !this.optionExists(option)) {
             option = this.createOption(option)
